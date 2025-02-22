@@ -1,0 +1,34 @@
+Projekt skala 0...36pkt
+Etap I - 1,5/2pkt
+Etap II - 4/4pkt
+Etap IIIa - /8pkt
+-Przygotowanie zgodnie ze specyfikacj¹ modu³u gpioemu.v         (0...4pkt): 3,75
+	-"16'h110: sdata_out_s <= W[31:0];"
+	-wartosc gpio_out zwieksza sie blednie na przytoczonych rysunkach!
+-Przygotowanie testów dla modu³u gpioemu.v                      (0...4pkt): 3,75
+	-brak testow dla wartosci brzegowych ale akceptowalnych przez system
+Etap IIIb - /12pkt
+-Utworzenie zgodnego ze specyfikacj¹ modu³u j¹dra               (0...6pkt): 3
+	-format danych przekazywanych miedzy app user'a a modulem kernela (mialbyc HEX a jest OCT)
+	-"baseptr = ioremap_nocache(SYKT_GPIO_BASE_ADDR, SYKT_GPIO_SIZE);" - zbedne ale dozwolne 
+	-"rejA_show" jest zbedna i do tego nie jest wspierana przez verilog'owa imp. 
+-Testy przygotowanego systemu 
+    -Przygotowanie testów CLI utworzonego systemu               (0...2pkt): -
+    lub(!)
+    -Przygotowanie aplikacji testuj¹cej utworzony system        (0...6pkt): 2,5
+	-format danych przekazywanych miedzy app user'a a modulem kernela (mialbyc HEX a jest OCT)
+	-brak sprawdzania zwracanych przez wywolywane funkcje rezultatow (strtoul())
+	-"if (status == 2) {" 2 bo?
+	-"int write_to_file(const char *file_path, unsigned int value) {" - szkoda ze nie sprawdza sie 
+	zwracanego rezultatu - choc funkcja nic poza 0 nie zwroci!
+-Raport/Prezentacja - /10pkt
+--Przygotowanie raportu z udokumentowaniem poprawnoœci dzia³ania (0...6pkt): 3 
+	-format danych przekazywanych miedzy app user'a a modulem kernela (mialbyc HEX a jest OCT)
+	-PDF zdawkowy i testy malo udokumentowane (po co wklejano kody!!!???)
+	-brak testow "na wyprowadzeniu GPIO modu³u gpioemu ma pojawiac sie liczba znalezionych liczb pierwszych"
+	jest na obrazakach gpio_out_s ale brak gpio_out!
+		-jego wartosc zwieksza sie blednie
+--Jakoœæ redakcyjna raportu (kompletnoœæ, czytelnoœæ,...)        (0...2pkt): 2
+--Sprawnosc preznetacji, orientacja w prezentowanym rozwiazaniu  (0...2pkt): 1,5
+	-problemy z doborem i wywolaniem wlasciwego polecnia 
+

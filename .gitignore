@@ -1,0 +1,16 @@
+*.tmp
+*.bak
+*~
+.DS_Store
+*.vvp
+*.vcd
+*.out
+*.log
+*.rpt
+*.fst
+.vsim_wlf/
+.simvision/
+.qemu-system-riscv32-sykt
+.fw_jump.elf
+.libgpioemu.a
+.rootfs.ext2
